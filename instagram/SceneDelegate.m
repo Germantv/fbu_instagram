@@ -7,6 +7,7 @@
 //
 
 #import "SceneDelegate.h"
+#import <Parse/Parse.h>
 
 @interface SceneDelegate ()
 
@@ -19,6 +20,38 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    // add event listeners for when user logs out
+    [NSNotificationCenter.defaultCenter addObserverForName:@"didLogout" object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        printf("Logout notification received!");
+        [self logOut];
+    }];
+    
+    // add user persistance across app restarts
+    PFUser *user = [PFUser currentUser];
+    if (user != nil) {
+        NSLog(@"Welcome back %@ 😀", user.username);
+        
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = tabBarController.viewControllers[0];
+        
+    }
+}
+
+- (void)logOut {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"%@", error.localizedDescription);
+        } else {
+            NSLog(@"Logout successful!");
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
+            self.window.rootViewController = loginVC;
+        }
+    }];
 }
 
 
