@@ -19,6 +19,9 @@
 		CE517AA124B4138E00268657 /* instagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE517AA024B4138E00268657 /* instagramUITests.m */; };
 		CE517AB324B43F1900268657 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE517AB224B43F1900268657 /* LoginVC.m */; };
 		CE517AB624B4495A00268657 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE517AB524B4495A00268657 /* HomeVC.m */; };
+		CE517AB924B44EA100268657 /* PostPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE517AB824B44EA100268657 /* PostPhotoVC.m */; };
+		CE517ABC24B4576E00268657 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = CE517ABB24B4576E00268657 /* Post.m */; };
+		CE517ABF24B5132200268657 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE517ABE24B5132200268657 /* PostCell.m */; };
 		E7875E0FA82A711FBA8A2987 /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768F182578C2090F59B073E6 /* Pods_instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,12 @@
 		CE517AB224B43F1900268657 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		CE517AB424B4495A00268657 /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		CE517AB524B4495A00268657 /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		CE517AB724B44EA100268657 /* PostPhotoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostPhotoVC.h; sourceTree = "<group>"; };
+		CE517AB824B44EA100268657 /* PostPhotoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostPhotoVC.m; sourceTree = "<group>"; };
+		CE517ABA24B4576E00268657 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		CE517ABB24B4576E00268657 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		CE517ABD24B5132200268657 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		CE517ABE24B5132200268657 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		DE17809B8D47744D20DEFF83 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		F7F6C4BDB93B8FB6B5C817B4 /* Pods-instagram-instagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram-instagramUITests.debug.xcconfig"; path = "Target Support Files/Pods-instagram-instagramUITests/Pods-instagram-instagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +197,8 @@
 				CE517AB224B43F1900268657 /* LoginVC.m */,
 				CE517AB424B4495A00268657 /* HomeVC.h */,
 				CE517AB524B4495A00268657 /* HomeVC.m */,
+				CE517AB724B44EA100268657 /* PostPhotoVC.h */,
+				CE517AB824B44EA100268657 /* PostPhotoVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +206,8 @@
 		CE517AAF24B43D6C00268657 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE517ABD24B5132200268657 /* PostCell.h */,
+				CE517ABE24B5132200268657 /* PostCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +215,8 @@
 		CE517AB024B43D7100268657 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE517ABA24B4576E00268657 /* Post.h */,
+				CE517ABB24B4576E00268657 /* Post.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,8 +462,11 @@
 				CE517A7B24B4138B00268657 /* AppDelegate.m in Sources */,
 				CE517A8C24B4138D00268657 /* main.m in Sources */,
 				CE517AB324B43F1900268657 /* LoginVC.m in Sources */,
+				CE517ABF24B5132200268657 /* PostCell.m in Sources */,
 				CE517AB624B4495A00268657 /* HomeVC.m in Sources */,
 				CE517A7E24B4138B00268657 /* SceneDelegate.m in Sources */,
+				CE517AB924B44EA100268657 /* PostPhotoVC.m in Sources */,
+				CE517ABC24B4576E00268657 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

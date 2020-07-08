@@ -8,6 +8,7 @@ target 'instagram' do
   # Pods for instagram
 	pod 'Parse'
   pod 'JGProgressHUD'
+  pod 'Parse/UI'
 
   target 'instagramTests' do
     inherit! :search_paths

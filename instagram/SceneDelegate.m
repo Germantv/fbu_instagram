@@ -8,8 +8,11 @@
 
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
+#import "JGProgressHUD.h"
 
 @interface SceneDelegate ()
+
+@property (nonatomic, strong) JGProgressHUD *HUD;
 
 @end
 
@@ -24,6 +27,9 @@
     // add event listeners for when user logs out
     [NSNotificationCenter.defaultCenter addObserverForName:@"didLogout" object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         printf("Logout notification received!");
+        self.HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+        self.HUD.textLabel.text = @"Logging out";
+        [self.HUD showInView:self.window.rootViewController.view];
         [self logOut];
     }];
     
@@ -36,7 +42,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-        self.window.rootViewController = tabBarController.viewControllers[0];
+        self.window.rootViewController = tabBarController;
         
     }
 }
@@ -47,6 +53,8 @@
             NSLog(@"%@", error.localizedDescription);
         } else {
             NSLog(@"Logout successful!");
+            // stop progress indicator
+            [self.HUD dismissAnimated:YES];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
             self.window.rootViewController = loginVC;

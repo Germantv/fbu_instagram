@@ -5,10 +5,13 @@ PODS:
     - Parse/Core (= 1.18.0)
   - Parse/Core (1.18.0):
     - Bolts/Tasks (= 1.9.1)
+  - Parse/UI (1.18.0):
+    - Parse/Core
 
 DEPENDENCIES:
   - JGProgressHUD
   - Parse
+  - Parse/UI
 
 SPEC REPOS:
   trunk:
@@ -21,6 +24,6 @@ SPEC CHECKSUMS:
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   Parse: 79bdda34fdb7eb2a707a43a951c8aae236cb3e34
 
-PODFILE CHECKSUM: f200a53b9ee767f697e7d7b481cb50e1ee41f166
+PODFILE CHECKSUM: 58ad5a5bc0e69a2851bae0125f1ca0dbf193d8da
 
 COCOAPODS: 1.9.1
